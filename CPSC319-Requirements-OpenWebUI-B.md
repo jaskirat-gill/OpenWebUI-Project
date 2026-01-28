@@ -7,7 +7,7 @@ OpenWebUI Group B
 
 ---
 
-## Project Overview
+### Project Overview
 
 This project addresses a critical gap in current RAG systems: the inability to intelligently adapt retrieval and processing strategies based on document characteristics. Current RAG implementations use one-size-fits-all chunking and embedding approaches, leading to poor performance when knowledge bases contain diverse document types (financial reports, legal contracts, meeting notes, technical documentation).
 
@@ -41,7 +41,7 @@ Unlike rule-based approaches that hardcode "if document type X, apply strategy Y
 
 This creates a self-tuning RAG system that improves over time rather than requiring constant manual configuration.
 
----
+
 
 ## User Personas
 
@@ -75,7 +75,7 @@ This creates a self-tuning RAG system that improves over time rather than requir
 - Dashboard showing document health and retrieval performance
 - Ability to override automatic decisions when needed
 
----
+
 
 ### Persona 2: Marcus Rodriguez - Financial Analyst
 **Demographics:**
@@ -107,7 +107,6 @@ This creates a self-tuning RAG system that improves over time rather than requir
 - Staleness indicators showing document age and update frequency
 - Confidence scores based on document freshness and consistency
 
----
 
 ### Persona 3: David Park - Customer Support Lead
 **Demographics:**
@@ -139,13 +138,14 @@ This creates a self-tuning RAG system that improves over time rather than requir
 - Contradiction alerts across related documents
 - Document health scores to prioritize maintenance efforts
 
----
 
 ## User Stories
 
 ### Epic 1: Intelligent Document Processing
 
-**US-001** (Must Have) - **8 points**  
+**US-001** (Must Have) - **Effort: 10–12 hours** 
+
+
 As a **knowledge manager**, I want the **system to automatically analyze each document's structure and content characteristics** so that **optimal processing strategies are selected without manual configuration**.  
 **Acceptance Criteria:**
 - System extracts structural features (headers, tables, lists, code blocks, metadata)
@@ -154,7 +154,8 @@ As a **knowledge manager**, I want the **system to automatically analyze each do
 - Strategy decision logged with explanation (e.g., "Detected tabular structure, preserving table boundaries")
 - Dashboard shows which strategy was applied to each document
 
-**US-002** (Must Have) - **8 points**  
+**US-002** (Must Have) - **Effort: 6–8 hours** 
+
 As a **knowledge manager**, I want to **see why the system chose specific processing strategies for each document** so that **I can understand and trust the automated decisions**.  
 **Acceptance Criteria:**
 - Each document shows "Processing Strategy" card with rationale
@@ -163,7 +164,8 @@ As a **knowledge manager**, I want to **see why the system chose specific proces
 - Links to similar documents using same strategy
 - Option to view raw structural analysis data
 
-**US-003** (Should Have) - **8 points**  
+**US-003** (Should Have) - **Effort: 4–6 hours**
+
 As a **knowledge manager**, I want to **override automatic processing decisions when needed** so that **I can apply domain knowledge the system might miss**.  
 **Acceptance Criteria:**
 - Manual override option available for each document
@@ -172,7 +174,7 @@ As a **knowledge manager**, I want to **override automatic processing decisions 
 - System learns from overrides to improve future decisions
 - Can revert to automatic processing at any time
 
-**US-004** (Could Have) - **5 points**  
+**US-004** (Could Have) - **Effort: 6–8 hours**  
 As a **system administrator**, I want the **system to learn from retrieval performance** so that **processing strategies improve over time**.  
 **Acceptance Criteria:**
 - Tracks which documents have poor retrieval rates (retrieved but not used in answers)
@@ -185,7 +187,7 @@ As a **system administrator**, I want the **system to learn from retrieval perfo
 
 ### Epic 2: Document Type Classification & Strategy Selection
 
-**US-005** (Must Have) - **8 points**  
+**US-005** (Must Have) - **Effort: 6–8 hours**  
 As a **system**, I want to **classify documents into semantic categories based on content analysis** so that **appropriate processing pipelines can be applied automatically**.  
 **Acceptance Criteria:**
 - Classification engine analyzes document content, not just file extensions
@@ -194,7 +196,7 @@ As a **system**, I want to **classify documents into semantic categories based o
 - Classification confidence score provided
 - Human review queue for low-confidence classifications (<70%)
 
-**US-006** (Must Have) - **8 points**  
+**US-006** (Must Have) - **Effort: 8–10 hours**  
 As a **system**, I want to **dynamically select chunking strategies based on document characteristics** so that **content structure is preserved during retrieval**.  
 **Acceptance Criteria:**
 - Strategy library includes: semantic chunking, hierarchical chunking, layout-aware, table-preserving, sliding window
@@ -203,7 +205,7 @@ As a **system**, I want to **dynamically select chunking strategies based on doc
 - Configurable chunk size ranges per strategy
 - Overlap strategy adjusted based on content density
 
-**US-007** (Should Have) - **8 points**  
+**US-007** (Should Have) - **Effort: 5–7 hours**  
 As a **knowledge manager**, I want the **system to extract and preserve document-specific metadata automatically** so that **retrieval context is enhanced without manual tagging**.  
 **Acceptance Criteria:**
 - Automatically extracts: dates, company names, product names, version numbers, authors
@@ -216,7 +218,7 @@ As a **knowledge manager**, I want the **system to extract and preserve document
 
 ### Epic 3: Knowledge Base Health Monitoring
 
-**US-009** (Must Have) - **8 points**  
+**US-009** (Must Have) - **4–6 hours**  
 As a **knowledge manager**, I want to **view a dashboard showing which documents are frequently retrieved vs. never accessed** so that **I can identify obsolete content and coverage gaps**.  
 **Acceptance Criteria:**
 - Heatmap visualization with color-coded retrieval frequency
@@ -225,7 +227,7 @@ As a **knowledge manager**, I want to **view a dashboard showing which documents
 - "Zero retrieval" documents flagged as potentially obsolete
 - Export capability for further analysis
 
-**US-010** (Must Have) - **8 points**  
+**US-010** (Must Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **receive automated staleness alerts based on document type and content characteristics** so that **I know which documents need updating**.  
 **Acceptance Criteria:**
 - Configurable staleness thresholds per document type (e.g., product docs: 30 days, policies: 180 days)
@@ -234,7 +236,7 @@ As a **knowledge manager**, I want to **receive automated staleness alerts based
 - Staleness score considers: last update date, retrieval frequency, content type
 - Email notifications for critically stale high-traffic documents
 
-**US-011** (Could Have) - **8 points**  
+**US-011** (Could Have) - **Effort: 6–8 hours**  
 As a **knowledge manager**, I want the **system to automatically detect contradictory information across documents** so that **I can resolve conflicts before they confuse users**.  
 **Acceptance Criteria:**
 - Semantic analysis detects contradictions (not just keyword matching)
@@ -243,7 +245,7 @@ As a **knowledge manager**, I want the **system to automatically detect contradi
 - Considers document dates to identify which is likely more current
 - Assignment workflow to route conflicts to subject matter experts
 
-**US-012** (Should Have) - **5 points**  
+**US-012** (Should Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **see which queries fail to retrieve relevant documents** so that **I can identify knowledge gaps**.  
 **Acceptance Criteria:**
 - Failed query log with search terms and context
@@ -256,7 +258,7 @@ As a **knowledge manager**, I want to **see which queries fail to retrieve relev
 
 ### Epic 4: Document Management & Maintenance
 
-**US-013** (Must Have) - **5 points**  
+**US-013** (Must Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **see retrieval performance metrics per document** so that **I can prioritize optimization efforts on high-impact content**.  
 **Acceptance Criteria:**
 - Metrics include: retrieval frequency, usage in final answers, user feedback scores
@@ -265,7 +267,7 @@ As a **knowledge manager**, I want to **see retrieval performance metrics per do
 - Comparison against similar documents
 - Sortable/filterable document health list
 
-**US-014** (Should Have) - **8 points**  
+**US-014** (Should Have) - **Effort: 6–8 hours**  
 As a **knowledge manager**, I want to **receive intelligent recommendations for document improvements** so that **I can efficiently enhance retrieval quality**.  
 **Acceptance Criteria:**
 - Recommendations based on: negative feedback, low usage despite retrieval, failed queries
@@ -274,7 +276,7 @@ As a **knowledge manager**, I want to **receive intelligent recommendations for 
 - One-click assignment to team members
 - Track recommendation acceptance rate
 
-**US-015** (Could Have) - **5 points**  
+**US-015** (Could Have) - **Effort: 5–7 hours**  
 As a **knowledge manager**, I want to **automatically merge or archive duplicate/obsolete documents** so that **knowledge base stays clean without manual intervention**.  
 **Acceptance Criteria:**
 - Duplicate detection using semantic similarity + metadata
@@ -283,7 +285,7 @@ As a **knowledge manager**, I want to **automatically merge or archive duplicate
 - Archive functionality for obsolete documents (not deleted, marked inactive)
 - Undo capability for automated actions
 
-**US-016** (Could Have) - **3 points**  
+**US-016** (Could Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **see document dependency graphs** so that **I understand relationships and update cascades**.  
 **Acceptance Criteria:**
 - Visual graph showing documents that reference each other
@@ -296,7 +298,7 @@ As a **knowledge manager**, I want to **see document dependency graphs** so that
 
 ### Epic 5: System Configuration & Flexibility
 
-**US-017** (Could Have) - **3 points**  
+**US-017** (Could Have) - **Effort: 6–8 hours**  
 As a **knowledge manager**, I want to **A/B test different processing strategies** so that **I can validate improvements empirically**.  
 **Acceptance Criteria:**
 - Split traffic between two strategies for same document set
@@ -305,7 +307,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 - Automated winner selection based on metrics
 - Rollback capability if new strategy underperforms
 
----
+
 
 ## Functional Requirements
 
@@ -1301,7 +1303,8 @@ Mile  REQ       DES       TEST  FINAL
 - Automatic structural analysis (headers, tables, lists, code blocks, metadata extraction)
 - Content characteristic detection (density, style, domain terminology)
 - Multi-label document classification with confidence scoring
-- Dynamic chunking strategy selection (3-4 core strategies: semantic, hierarchical, layout-aware)
+- Dynamic chunking strategy selection (2-3 core strategies: semantic, hierarchical, layout-aware)
+    -  Heuristic-based for MVP
 - Strategy rationale logging and explanation generation
 - Manual override capability with audit trail
 - Support for common document formats (PDF, DOCX, TXT, Markdown, HTML)
