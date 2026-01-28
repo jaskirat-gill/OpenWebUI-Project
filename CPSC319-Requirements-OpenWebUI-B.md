@@ -732,46 +732,14 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ## Work Breakdown Structure
 
 ### Level 1: Project Phases
-
-#### Phase 1: Project Planning & Architecture (30 hours)
-**Duration:** Week 1  
-**Team Members:** All  
-**Dependencies:** None
-
----
-
-#### Phase 2: Document Analysis Engine (80 hours)
-**Duration:** Weeks 2-3  
-**Team Members:** All  
-**Dependencies:** Phase 1 complete
-
----
-
-#### Phase 3: Adaptive Processing Pipeline (70 hours)
-**Duration:** Weeks 3-4  
-**Team Members:** All  
-**Dependencies:** Phase 2 complete
-
----
-
-#### Phase 4: Knowledge Base Health System (60 hours)
-**Duration:** Weeks 4-5  
-**Team Members:** All  
-**Dependencies:** Phase 2 complete (can run parallel with Phase 3)
-
----
-
-#### Phase 5: Learning & Optimization (40 hours)
-**Duration:** Week 5-6  
-**Team Members:** All  
-**Dependencies:** Phases 3 and 4 complete
-
----
-
-#### Phase 6: Testing & Integration (45 hours)
-**Duration:** Week 6  
-**Team Members:** All  
-**Dependencies:** Phases 3, 4, 5 complete
+| Phase | Phase Name                      | Total Hours | Duration  | Team Members | Dependencies                             |
+| ----- | ------------------------------- | ----------- | --------- | ------------ | ---------------------------------------- |
+| 1     | Project Planning & Architecture | 30          | Week 1    | All          | None                                     |
+| 2     | Document Analysis Engine        | 80          | Weeks 2–3 | All          | Phase 1 complete                         |
+| 3     | Adaptive Processing Pipeline    | 70          | Weeks 3–4 | All          | Phase 2 complete                         |
+| 4     | Knowledge Base Health System    | 60          | Weeks 4–5 | All          | Phase 2 complete (parallel with Phase 3) |
+| 5     | Learning & Optimization         | 40          | Weeks 5–6 | All          | Phases 3 and 4 complete                  |
+| 6     | Testing & Integration           | 45          | Week 6    | All          | Phases 3, 4, 5 complete                  |
 
 ---
 
