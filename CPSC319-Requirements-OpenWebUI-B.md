@@ -1309,19 +1309,18 @@ Mile  REQ       DES       TEST  FINAL
 - Manual override capability with audit trail
 - Support for common document formats (PDF, DOCX, TXT, Markdown, HTML)
 
-#### Knowledge Base Health Monitoring
-- Retrieval frequency tracking and heatmap visualization
-- Automated staleness detection with configurable thresholds
-- Document health scoring based on usage, feedback, and freshness
-- Basic contradiction detection (semantic similarity-based)
-- Dashboard showing document quality metrics
-- Failed query logging for gap analysis
+#### Knowledge Base Health Monitoring (Visibility-Only for MVP)
 
-#### Learning & Optimization
-- Strategy performance tracking over time
-- Basic learning from manual overrides
-- Strategy selection improvement based on retrieval success rates
-- Performance metrics per strategy type
+- Retrieval frequency tracking
+- Basic usage visualization (heatmap or ranked list of most/least retrieved documents)
+- Automated staleness detection
+  - Time-based thresholds configurable by document type
+- Simple document health indicators
+  - Based on **usage frequency + freshness only**
+- Dashboard showing document-level health signals
+
+> Note: Health features in MVP are **diagnostic and informational**, not automated decision-making tools.
+
 
 #### Integration & User Interface
 - Open WebUI plugin/extension integration
@@ -1353,11 +1352,18 @@ Mile  REQ       DES       TEST  FINAL
 - Document relationship mapping and dependency graphs
 - Coverage gap analysis with suggested topics
 
-#### Learning Enhancements
-- A/B testing framework for strategy comparison
-- Advanced learning algorithms (ensemble methods, few-shot learning)
-- Transfer learning across knowledge bases
-- Confidence-based progressive rollout of learned improvements
+#### Learning & Optimization
+- Strategy performance tracking over time
+- Basic learning from manual overrides
+- Strategy selection improvement based on retrieval success rates
+- Performance metrics per strategy type
+
+#### Integration & User Interface
+- Open WebUI plugin/extension integration
+- Document upload and processing UI
+- Health dashboard (heatmap, staleness alerts, document list)
+- Strategy explanation display
+- Manual override interface
 
 #### Usability Improvements
 - Mobile-responsive interface
@@ -1422,7 +1428,6 @@ Mile  REQ       DES       TEST  FINAL
 - Additional chunking strategies and advanced metadata extraction
 - Sophisticated contradiction detection with workflow
 - Document improvement recommendations
-- A/B testing and advanced learning
 - Enhanced usability features
 
 **Could Have (Future Iterations):**
