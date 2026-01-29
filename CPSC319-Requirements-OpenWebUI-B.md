@@ -218,7 +218,7 @@ As a **knowledge manager**, I want the **system to extract and preserve document
 
 ### Epic 3: Knowledge Base Health Monitoring
 
-**US-009** (Must Have) - **4–6 hours**  
+**US-008** (Must Have) - **4–6 hours**  
 As a **knowledge manager**, I want to **view a dashboard showing which documents are frequently retrieved vs. never accessed** so that **I can identify obsolete content and coverage gaps**.  
 **Acceptance Criteria:**
 - Heatmap visualization with color-coded retrieval frequency
@@ -227,7 +227,7 @@ As a **knowledge manager**, I want to **view a dashboard showing which documents
 - "Zero retrieval" documents flagged as potentially obsolete
 - Export capability for further analysis
 
-**US-010** (Must Have) - **Effort: 4–6 hours**  
+**US-009** (Must Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **receive automated staleness alerts based on document type and content characteristics** so that **I know which documents need updating**.  
 **Acceptance Criteria:**
 - Configurable staleness thresholds per document type (e.g., product docs: 30 days, policies: 180 days)
@@ -236,7 +236,7 @@ As a **knowledge manager**, I want to **receive automated staleness alerts based
 - Staleness score considers: last update date, retrieval frequency, content type
 - Email notifications for critically stale high-traffic documents
 
-**US-011** (Could Have) - **Effort: 6–8 hours**  
+**US-010** (Could Have) - **Effort: 6–8 hours**  
 As a **knowledge manager**, I want the **system to automatically detect contradictory information across documents** so that **I can resolve conflicts before they confuse users**.  
 **Acceptance Criteria:**
 - Semantic analysis detects contradictions (not just keyword matching)
@@ -245,7 +245,7 @@ As a **knowledge manager**, I want the **system to automatically detect contradi
 - Considers document dates to identify which is likely more current
 - Assignment workflow to route conflicts to subject matter experts
 
-**US-012** (Should Have) - **Effort: 4–6 hours**  
+**US-011** (Should Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **see which queries fail to retrieve relevant documents** so that **I can identify knowledge gaps**.  
 **Acceptance Criteria:**
 - Failed query log with search terms and context
@@ -258,7 +258,7 @@ As a **knowledge manager**, I want to **see which queries fail to retrieve relev
 
 ### Epic 4: Document Management & Maintenance
 
-**US-013** (Must Have) - **Effort: 4–6 hours**  
+**US-012** (Must Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **see retrieval performance metrics per document** so that **I can prioritize optimization efforts on high-impact content**.  
 **Acceptance Criteria:**
 - Metrics include: retrieval frequency, usage in final answers, user feedback scores
@@ -267,7 +267,7 @@ As a **knowledge manager**, I want to **see retrieval performance metrics per do
 - Comparison against similar documents
 - Sortable/filterable document health list
 
-**US-014** (Should Have) - **Effort: 6–8 hours**  
+**US-013** (Should Have) - **Effort: 6–8 hours**  
 As a **knowledge manager**, I want to **receive intelligent recommendations for document improvements** so that **I can efficiently enhance retrieval quality**.  
 **Acceptance Criteria:**
 - Recommendations based on: negative feedback, low usage despite retrieval, failed queries
@@ -276,7 +276,7 @@ As a **knowledge manager**, I want to **receive intelligent recommendations for 
 - One-click assignment to team members
 - Track recommendation acceptance rate
 
-**US-015** (Could Have) - **Effort: 5–7 hours**  
+**US-014** (Could Have) - **Effort: 5–7 hours**  
 As a **knowledge manager**, I want to **automatically merge or archive duplicate/obsolete documents** so that **knowledge base stays clean without manual intervention**.  
 **Acceptance Criteria:**
 - Duplicate detection using semantic similarity + metadata
@@ -285,7 +285,7 @@ As a **knowledge manager**, I want to **automatically merge or archive duplicate
 - Archive functionality for obsolete documents (not deleted, marked inactive)
 - Undo capability for automated actions
 
-**US-016** (Could Have) - **Effort: 4–6 hours**  
+**US-015** (Could Have) - **Effort: 4–6 hours**  
 As a **knowledge manager**, I want to **see document dependency graphs** so that **I understand relationships and update cascades**.  
 **Acceptance Criteria:**
 - Visual graph showing documents that reference each other
@@ -298,7 +298,7 @@ As a **knowledge manager**, I want to **see document dependency graphs** so that
 
 ### Epic 5: System Configuration & Flexibility
 
-**US-017** (Could Have) - **Effort: 6–8 hours**  
+**US-016** (Could Have) - **Effort: 6–8 hours**  
 As a **knowledge manager**, I want to **A/B test different processing strategies** so that **I can validate improvements empirically**.  
 **Acceptance Criteria:**
 - Split traffic between two strategies for same document set
@@ -376,7 +376,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-009: Retrieval Frequency Tracking
 **Priority:** Must Have  
-**Related User Stories:** US-009, US-013  
+**Related User Stories:** US-008, US-012  
 **Description:** The system shall track and log every document retrieval event with timestamp, query context, whether content was used in final answer, and user feedback, aggregating this data into document-level metrics accessible via dashboard.  
 **Rationale:** Usage patterns reveal document value and identify obsolete content; essential for data-driven knowledge base maintenance.  
 **Verification Method:** Execute 100 test queries; verify all retrievals logged; confirm metrics aggregation accuracy; validate dashboard shows correct frequency data; test time-range filtering.
@@ -385,7 +385,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-010: Adaptive Staleness Detection
 **Priority:** Must Have  
-**Related User Stories:** US-010  
+**Related User Stories:** US-009  
 **Description:** The system shall calculate document staleness scores based on: time since last update, document type, historical update frequency, and retrieval patterns; suggest staleness thresholds per document type; and generate alerts with severity levels (critical/warning/info).  
 **Rationale:** One-size-fits-all staleness thresholds don't work; product docs stale in 30 days, policies stale in 365 days; adaptive thresholds match content reality.  
 **Verification Method:** Create test documents with varied update patterns and types; verify system suggests appropriate thresholds; manually set document to stale state; confirm alerts generated; test notification delivery.
@@ -394,7 +394,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-011: Semantic Contradiction Detection
 **Priority:** Must Have  
-**Related User Stories:** US-011  
+**Related User Stories:** US-010  
 **Description:** The system shall use semantic analysis to detect contradictory statements across documents (beyond keyword matching), present contradictions in side-by-side comparison view, score severity (critical/moderate/minor), consider document timestamps to identify likely-current version, and enable assignment to resolvers.  
 **Rationale:** Contradictions degrade RAG accuracy and user trust; manual detection impossible at scale; semantic analysis catches meaning conflicts not just word differences.  
 **Verification Method:** Create test documents with intentional contradictions (factual conflicts, outdated data, phrasing differences); verify detection accuracy >75%; confirm severity scoring aligns with human judgment; test assignment workflow.
@@ -403,7 +403,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-012: Failed Query Analysis
 **Priority:** Should Have  
-**Related User Stories:** US-012  
+**Related User Stories:** US-011  
 **Description:** The system shall log queries that retrieve documents but receive negative feedback, cluster similar failed queries to identify patterns, generate suggested topics for new documentation, and track gap resolution status.  
 **Rationale:** Failed queries reveal knowledge gaps; clustering identifies systemic issues not individual query problems; actionable insights drive knowledge base improvement.  
 **Verification Method:** Generate failed queries with patterns; verify clustering groups similar queries; confirm topic suggestions are relevant; test gap assignment and tracking workflow; measure gap resolution rate.
@@ -412,7 +412,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-013: Document Health Scoring
 **Priority:** Must Have  
-**Related User Stories:** US-013  
+**Related User Stories:** US-012  
 **Description:** The system shall calculate composite health scores for each document combining: retrieval frequency, usage in answers, user feedback, staleness, contradiction involvement, and structural quality; display trends over time; enable sorting and filtering by health metrics.  
 **Rationale:** Single metrics misleading; composite score provides holistic quality view; trends show improvement or degradation; enables prioritized maintenance.  
 **Verification Method:** Calculate health scores for test document set; validate formula includes all factors; verify trending data accurate; test sorting/filtering; compare system rankings against manual quality assessment.
@@ -421,7 +421,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-014: Improvement Recommendation Engine
 **Priority:** Should Have  
-**Related User Stories:** US-014  
+**Related User Stories:** US-013  
 **Description:** The system shall analyze document health metrics, retrieval failures, and user feedback to generate specific improvement recommendations (add headers, split document, update dates, resolve contradictions), prioritize by impact, and enable one-click assignment.  
 **Rationale:** Identifying problems is only half the solution; actionable recommendations guide maintenance efforts; prioritization focuses effort on high-impact improvements.  
 **Verification Method:** Create documents with known issues; verify system generates appropriate recommendations; confirm prioritization reflects impact; test assignment workflow; track recommendation acceptance rate >60%.
@@ -439,7 +439,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-016: Duplicate Detection
 **Priority:** Could Have  
-**Related User Stories:** US-015  
+**Related User Stories:** US-014  
 **Description:** The system shall detect potential duplicate documents using semantic similarity (>90% overlap) combined with metadata comparison, provide confidence scores, enable preview of merged content, and support archiving (not deletion) of duplicates.  
 **Rationale:** Duplicate content wastes storage and confuses retrieval; semantic detection catches duplicates with minor variations; archiving preserves content for audit while cleaning knowledge base.  
 **Verification Method:** Create test duplicates with exact, near-exact, and semantically similar content; verify detection accuracy; test merge preview; confirm archive doesn't delete; validate undo capability.
@@ -448,7 +448,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-017: Document Relationship Mapping
 **Priority:** Could Have  
-**Related User Stories:** US-016  
+**Related User Stories:** US-015  
 **Description:** The system shall identify relationships between documents (cross-references, topic similarity, temporal dependencies), generate visual relationship graphs, highlight update cascade impacts, and identify orphaned documents.  
 **Rationale:** Documents don't exist in isolation; understanding relationships prevents orphaned content and reveals update dependencies.  
 **Verification Method:** Create document set with known relationships; verify graph accurately represents connections; test cascade prediction; identify orphaned documents; validate interactive graph exploration.
@@ -457,30 +457,11 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### FR-018: Configuration Management
 **Priority:** Must Have  
-**Related User Stories:** US-017  
+**Related User Stories:** US-016  
 **Description:** The system shall provide UI for configuring: preferred chunk size ranges, staleness threshold defaults per category, enabled/disabled processing strategies, confidence thresholds for automation, with export/import capability for configuration profiles.  
 **Rationale:** Different organizations have different requirements; configuration flexibility enables customization without code changes; profiles enable best practice sharing.  
 **Verification Method:** Modify all configuration parameters; verify changes take effect; test export/import of profiles; confirm configuration validation prevents invalid values; test configuration rollback.
 
----
-
-### FR-019: Performance Monitoring Dashboard
-**Priority:** Should Have  
-**Related User Stories:** US-018  
-**Description:** The system shall display real-time metrics including: document processing time, embedding API usage and costs, storage consumption, query performance, and bottleneck identification, with configurable alerts and historical trend analysis.  
-**Rationale:** System optimization requires visibility into resource usage and performance bottlenecks; cost tracking prevents unexpected expenses.  
-**Verification Method:** Monitor system under load; verify metrics accuracy; trigger alert conditions; validate cost calculations; test historical trend visualization; confirm bottleneck identification.
-
----
-
-### FR-020: A/B Testing Framework
-**Priority:** Could Have  
-**Related User Stories:** US-019  
-**Description:** The system shall support A/B testing of processing strategies by splitting traffic between variants, tracking performance metrics separately, calculating statistical significance, and enabling automated winner selection with rollback capability.  
-**Rationale:** Empirical validation prevents subjective optimization decisions; statistical testing ensures changes actually improve performance; rollback mitigates bad changes.  
-**Verification Method:** Configure A/B test for chunking strategies; verify traffic split; track metrics per variant; confirm statistical significance calculation; test automated winner selection; validate rollback.
-
----
 
 ## Non-Functional Requirements
 
@@ -731,7 +712,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ## Work Breakdown Structure
 
-### Level 1: Project Phases
+### Level 1: Project Phases Summary
 | Phase | Phase Name                      | Total Hours | Duration  | Team Members | Dependencies                             |
 | ----- | ------------------------------- | ----------- | --------- | ------------ | ---------------------------------------- |
 | 0     | Project Planning & Architecture | 30          | Week 1    | All          | None                                     |
@@ -744,23 +725,24 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ---
 
+ **Total Project Hours:** 338 hours (67.6 hours per team member for 5-person team)
 ### Level 2: Phase Breakdown
 
 #### Phase 0: Project Planning & Architecture (30 hours)
 
 **0.1 Requirements Finalization (8 hours)**
-- 0.1.1 Requirements document review and refinement (4 hours) - [Team Member A]
-- 0.1.2 Open WebUI community research and validation (4 hours) - [Team Member B]
+- 0.1.1 Requirements document review and refinement (4 hours) - [Jaskirat Gill]
+- 0.1.2 Open WebUI community research and validation (4 hours) - [Shibo Ai]
 
 **0.2 System Architecture Design (14 hours)**
-- 0.2.1 High-level architecture diagram and component design (5 hours) - [Team Member A] - Depends on 0.1
-- 0.2.2 Database schema design for document metadata, analytics, and health metrics (5 hours) - [Team Member C] - Depends on 0.1
-- 0.2.3 API design specification and integration points (4 hours) - [Team Member D] - Depends on 0.2.1
+- 0.2.1 High-level architecture diagram and component design (5 hours) - [Jaskirat Gill] - Depends on 0.1
+- 0.2.2 Database schema design for document metadata, analytics, and health metrics (5 hours) - [Rui Xia (Sherry)] - Depends on 0.1
+- 0.2.3 API design specification and integration points (4 hours) - [Crystal Zhao] - Depends on 0.2.1
 
 **0.3 Development Environment Setup (8 hours)**
-- 0.3.1 Repository initialization, CI/CD pipeline, and code standards (3 hours) - [Team Member A]
-- 0.3.2 Development environment configuration and dependency setup (3 hours) - [Team Member E]
-- 0.3.3 Testing framework setup (pytest, integration test structure) (2 hours) - [Team Member B]
+- 0.3.1 Repository initialization, CI/CD pipeline, and code standards (3 hours) - [Jaskirat Gill]
+- 0.3.2 Development environment configuration and dependency setup (3 hours) - [Ella McReynolds]
+- 0.3.3 Testing framework setup (pytest, integration test structure) (2 hours) - [Shibo Ai]
 
 ---
 
@@ -773,128 +755,119 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 - 1.1.4 Verify existing Dockerfile build/run workflow (2 hours) - All
 
 **1.2 External Embedding Provider API Setup & Validation (5 hours)**
-- 1.2.1 Select target external embedding provider(s) (2 hours) - [Team Member D]
-- 1.2.2 Experimental unit test: validate embedding API connectivity (2 hours) - [Team Member E] - Depends on 1.2.1
-- 1.2.3 Rate limit validation: confirm provider meets minimum throughput requirement (1 hour) - [Team Member E] - Depends on 1.2.2
+- 1.2.1 Select target external embedding provider(s) (2 hours) - [Crystal Zhao]
+- 1.2.2 Experimental unit test: validate embedding API connectivity (2 hours) - [Ella McReynolds] - Depends on 1.2.1
+- 1.2.3 Rate limit validation: confirm provider meets minimum throughput requirement (1 hour) - [Ella McReynolds] - Depends on 1.2.2
 
 ---
 
 #### Phase 2: Document Analysis Engine (80 hours)
 
 **2.1 Document Structure Extraction (24 hours)**
-- 2.1.1 Document parser integration (Unstructured.io or similar) (8 hours) - [Team Member A]
-- 2.1.2 Structural feature extraction (headers, tables, lists, code blocks) (10 hours) - [Team Member B] - Depends on 2.1.1
-- 2.1.3 Metadata extraction (dates, entities, version numbers) (6 hours) - [Team Member C] - Depends on 2.1.1
+- 2.1.1 Document parser integration (Unstructured.io or similar) (8 hours) - [Jaskirat Gill]
+- 2.1.2 Structural feature extraction (headers, tables, lists, code blocks) (10 hours) - [Shibo Ai] - Depends on 2.1.1
+- 2.1.3 Metadata extraction (dates, entities, version numbers) (6 hours) - [Rui Xia (Sherry)] - Depends on 2.1.1
 
 **2.2 Content Characteristic Analysis (20 hours)**
-- 2.2.1 Content density and style analysis implementation (8 hours) - [Team Member D]
-- 2.2.2 Domain terminology detection (technical, legal, financial) (7 hours) - [Team Member E] - Depends on 2.2.1
-- 2.2.3 Temporal and entity concentration analysis (5 hours) - [Team Member A] - Depends on 2.2.1
+- 2.2.1 Content density and style analysis implementation (8 hours) - [Crystal Zhao]
+- 2.2.2 Domain terminology detection (technical, legal, financial) (7 hours) - [Ella McReynolds] - Depends on 2.2.1
+- 2.2.3 Temporal and entity concentration analysis (5 hours) - [Jaskirat Gill] - Depends on 2.2.1
 
 **2.3 Document Classification System (20 hours)**
-- 2.3.1 Multi-label classification model integration (8 hours) - [Team Member B]
-- 2.3.2 Confidence scoring and low-confidence queue (7 hours) - [Team Member C] - Depends on 2.3.1
-- 2.3.3 Classification result storage and retrieval (5 hours) - [Team Member D] - Depends on 2.3.1
+- 2.3.1 Multi-label classification model integration (8 hours) - [Shibo Ai]
+- 2.3.2 Confidence scoring and low-confidence queue (7 hours) - [Rui Xia (Sherry)] - Depends on 2.3.1
+- 2.3.3 Classification result storage and retrieval (5 hours) - [Crystal Zhao] - Depends on 2.3.1
 
 **2.4 Analysis API and Integration (16 hours)**
-- 2.4.1 Document analysis REST API endpoints (6 hours) - [Team Member E] - Depends on 2.1, 2.2, 2.3
-- 2.4.2 Async processing queue for large documents (6 hours) - [Team Member A] - Depends on 2.4.1
-- 2.4.3 Error handling and validation (4 hours) - [Team Member B] - Depends on 2.4.1
+- 2.4.1 Document analysis REST API endpoints (6 hours) - [Ella McReynolds] - Depends on 2.1, 2.2, 2.3
+- 2.4.2 Async processing queue for large documents (6 hours) - [Jaskirat Gill] - Depends on 2.4.1
+- 2.4.3 Error handling and validation (4 hours) - [Shibo Ai] - Depends on 2.4.1
 
 ---
 
 #### Phase 3: Adaptive Processing Pipeline (70 hours)
 
 **3.1 Chunking Strategy Library (24 hours)**
-- 3.1.1 Semantic chunking implementation (8 hours) - [Team Member A]
-- 3.1.2 Hierarchical chunking implementation (8 hours) - [Team Member B]
-- 3.1.3 Layout-aware and table-preserving chunking (8 hours) - [Team Member C]
+- 3.1.1 Semantic chunking implementation (8 hours) - [Jaskirat Gill]
+- 3.1.2 Hierarchical chunking implementation (8 hours) - [Shibo Ai]
+- 3.1.3 Layout-aware and table-preserving chunking (8 hours) - [Rui Xia (Sherry)]
 
 **3.2 Dynamic Strategy Selection (20 hours)**
-- 3.2.1 Strategy selection logic based on document features (10 hours) - [Team Member D] - Depends on 3.1, Phase 2
-- 3.2.2 Confidence scoring for strategy decisions (6 hours) - [Team Member E] - Depends on 3.2.1
-- 3.2.3 Rationale generation and logging (4 hours) - [Team Member A] - Depends on 3.2.1
+- 3.2.1 Strategy selection logic based on document features (10 hours) - [Crystal Zhao] - Depends on 3.1, Phase 2
+- 3.2.2 Confidence scoring for strategy decisions (6 hours) - [Ella McReynolds] - Depends on 3.2.1
+- 3.2.3 Rationale generation and logging (4 hours) - [Jaskirat Gill] - Depends on 3.2.1
 
 **3.3 Manual Override System (12 hours)**
-- 3.3.1 Override UI and workflow (6 hours) - [Team Member B]
-- 3.3.2 Override logging and audit trail (4 hours) - [Team Member C] - Depends on 3.3.1
-- 3.3.3 Reversion to automatic mode (2 hours) - [Team Member D] - Depends on 3.3.1
+- 3.3.1 Override UI and workflow (6 hours) - [Shibo Ai]
+- 3.3.2 Override logging and audit trail (4 hours) - [Rui Xia (Sherry)] - Depends on 3.3.1
+- 3.3.3 Reversion to automatic mode (2 hours) - [Crystal Zhao] - Depends on 3.3.1
 
 **3.4 Embedding and Indexing Pipeline (14 hours)**
-- 3.4.1 Adaptive chunk embedding with metadata attachment (6 hours) - [Team Member E] - Depends on 3.1, 3.2
-- 3.4.2 Vector database integration and storage (5 hours) - [Team Member A] - Depends on 3.4.1
-- 3.4.3 Incremental indexing for document updates (3 hours) - [Team Member B] - Depends on 3.4.2
+- 3.4.1 Adaptive chunk embedding with metadata attachment (6 hours) - [Ella McReynolds] - Depends on 3.1, 3.2
+- 3.4.2 Vector database integration and storage (5 hours) - [Jaskirat Gill] - Depends on 3.4.1
+- 3.4.3 Incremental indexing for document updates (3 hours) - [Shibo Ai] - Depends on 3.4.2
 
 ---
 
 #### Phase 4: Knowledge Base Health System (60 hours)
 
 **4.1 Retrieval Analytics (18 hours)**
-- 4.1.1 Retrieval event logging and storage (6 hours) - [Team Member C]
-- 4.1.2 Document frequency aggregation and metrics (7 hours) - [Team Member D] - Depends on 4.1.1
-- 4.1.3 Heatmap visualization API (5 hours) - [Team Member E] - Depends on 4.1.2
+- 4.1.1 Retrieval event logging and storage (6 hours) - [Rui Xia (Sherry)]
+- 4.1.2 Document frequency aggregation and metrics (7 hours) - [Crystal Zhao] - Depends on 4.1.1
+- 4.1.3 Heatmap visualization API (5 hours) - [Ella McReynolds] - Depends on 4.1.2
 
 **4.2 Staleness Detection (16 hours)**
-- 4.2.1 Staleness scoring algorithm (6 hours) - [Team Member A]
-- 4.2.2 Adaptive threshold suggestion per document type (6 hours) - [Team Member B] - Depends on 4.2.1
-- 4.2.3 Alert generation and notification system (4 hours) - [Team Member C] - Depends on 4.2.2
+- 4.2.1 Staleness scoring algorithm (6 hours) - [Jaskirat Gill]
+- 4.2.2 Adaptive threshold suggestion per document type (6 hours) - [Shibo Ai] - Depends on 4.2.1
+- 4.2.3 Alert generation and notification system (4 hours) - [Rui Xia (Sherry)] - Depends on 4.2.2
 
 **4.3 Contradiction Detection (18 hours)**
-- 4.3.1 Semantic similarity analysis for contradiction detection (8 hours) - [Team Member D]
-- 4.3.2 Severity scoring and temporal analysis (6 hours) - [Team Member E] - Depends on 4.3.1
-- 4.3.3 Contradiction review workflow and assignment (4 hours) - [Team Member A] - Depends on 4.3.2
+- 4.3.1 Semantic similarity analysis for contradiction detection (8 hours) - [Crystal Zhao]
+- 4.3.2 Severity scoring and temporal analysis (6 hours) - [Ella McReynolds] - Depends on 4.3.1
+- 4.3.3 Contradiction review workflow and assignment (4 hours) - [Jaskirat Gill] - Depends on 4.3.2
 
 **4.4 Health Dashboard UI (8 hours)**
-- 4.4.1 Dashboard component development (React) (5 hours) - [Team Member B] - Depends on 4.1, 4.2, 4.3
-- 4.4.2 Filtering, sorting, and interaction (3 hours) - [Team Member C] - Depends on 4.4.1
+- 4.4.1 Dashboard component development (React) (5 hours) - [Shibo Ai] - Depends on 4.1, 4.2, 4.3
+- 4.4.2 Filtering, sorting, and interaction (3 hours) - [Rui Xia (Sherry)] - Depends on 4.4.1
 
 ---
 
 #### Phase 5: Learning & Optimization (40 hours)
 
 **5.1 Performance Tracking (12 hours)**
-- 5.1.1 Strategy performance metrics collection (6 hours) - [Team Member D]
-- 5.1.2 Retrieval success/failure tracking per strategy (6 hours) - [Team Member E] - Depends on 5.1.1
+- 5.1.1 Strategy performance metrics collection (6 hours) - [Crystal Zhao]
+- 5.1.2 Retrieval success/failure tracking per strategy (6 hours) - [Ella McReynolds] - Depends on 5.1.1
 
 **5.2 Learning Algorithm Implementation (16 hours)**
-- 5.2.1 Strategy selection improvement based on performance (10 hours) - [Team Member A] - Depends on 5.1
-- 5.2.2 Manual override learning integration (6 hours) - [Team Member B] - Depends on 5.2.1
+- 5.2.1 Strategy selection improvement based on performance (10 hours) - [Jaskirat Gill] - Depends on 5.1
+- 5.2.2 Manual override learning integration (6 hours) - [Shibo Ai] - Depends on 5.2.1
 
 **5.3 Recommendation Engine (12 hours)**
-- 5.3.1 Document improvement recommendation generation (7 hours) - [Team Member C] - Depends on Phase 4
-- 5.3.2 Prioritization and assignment workflow (5 hours) - [Team Member D] - Depends on 5.3.1
+- 5.3.1 Document improvement recommendation generation (7 hours) - [Rui Xia (Sherry)] - Depends on Phase 4
+- 5.3.2 Prioritization and assignment workflow (5 hours) - [Crystal Zhao] - Depends on 5.3.1
 
 ---
 
 #### Phase 6: Testing & Integration (45 hours)
 
 **6.1 Unit Testing (12 hours)**
-- 6.1.1 Backend unit tests for all components (7 hours) - [Team Member A]
-- 6.1.2 Frontend unit tests (5 hours) - [Team Member B]
+- 6.1.1 Backend unit tests for all components (7 hours) - [Jaskirat Gill]
+- 6.1.2 Frontend unit tests (5 hours) - [Shibo Ai]
 
 **6.2 Integration Testing (15 hours)**
-- 6.2.1 End-to-end workflow tests (document upload to retrieval) (8 hours) - [Team Member C] - Depends on 6.1
-- 6.2.2 Open WebUI integration testing (7 hours) - [Team Member D] - Depends on 6.1
+- 6.2.1 End-to-end workflow tests (document upload to retrieval) (8 hours) - [Rui Xia (Sherry)] - Depends on 6.1
+- 6.2.2 Open WebUI integration testing (7 hours) - [Crystal Zhao] - Depends on 6.1
 
 **6.3 Performance Testing (10 hours)**
-- 6.3.1 Load testing with large document sets (5 hours) - [Team Member E] - Depends on 6.2
-- 6.3.2 Strategy selection and retrieval performance benchmarking (5 hours) - [Team Member A] - Depends on 6.3.1
+- 6.3.1 Load testing with large document sets (5 hours) - [Ella McReynolds] - Depends on 6.2
+- 6.3.2 Strategy selection and retrieval performance benchmarking (5 hours) - [Jaskirat Gill] - Depends on 6.3.1
 
 **6.4 User Acceptance Testing (8 hours)**
 - 6.4.1 UAT session preparation and execution (5 hours) - All - Depends on 6.3
 - 6.4.2 Bug fixes and final refinements (3 hours) - All - Depends on 6.4.1
 
----
 
-### Level 3: Total Hour Breakdown by Phase
-- **Phase 0:** 30 hours
-- **Phase 1:** 13 hours
-- **Phase 2:** 80 hours
-- **Phase 3:** 70 hours
-- **Phase 4:** 60 hours
-- **Phase 5:** 40 hours
-- **Phase 6:** 45 hours
-- **Total Project Hours:** 338 hours (67.6 hours per team member for 5-person team)
+
 
 ---
 
@@ -910,7 +883,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### Detailed Schedule
 
-#### Project Planning & Architecture ()
+#### Project Planning & Architecture 
 **Phase 0 Tasks:**
 - Requirements finalization and Open WebUI community research
 - System architecture design and database schema
@@ -920,7 +893,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ---
 
-#### Bootstrap & Codebase/Embedding Provider Onboarding ()
+#### Bootstrap & Codebase/Embedding Provider Onboarding 
 **Phase 1 Tasks:**
 - Open WebUI codebase familiarization and extension-point mapping
 - Verify existing Dockerfile build/run workflow
@@ -930,7 +903,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ---
 
-#### Core Analysis Engine ()
+#### Core Analysis Engine 
 **Phase 2 Tasks:**
 - Week 2: Document structure extraction and content analysis
 - Week 3: Classification system and analysis API
@@ -941,7 +914,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ---
 
-#### Adaptive Processing & Health System ()
+#### Adaptive Processing & Health System 
 **Phase 3 & 4 Tasks (Parallel):**
 - Week 3-4: Chunking strategies, dynamic selection, embedding pipeline
 - Week 4: Retrieval analytics, staleness detection, contradiction detection
@@ -951,7 +924,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ---
 
-#### Learning & Optimization ()
+#### Learning & Optimization 
 **Phase 5 Tasks:**
 - Performance tracking and learning algorithm implementation
 - Recommendation engine development
@@ -961,7 +934,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ---
 
-#### Testing & Final Integration ()
+#### Testing & Final Integration 
 **Phase 6 Tasks:**
 - Comprehensive testing (unit, integration, performance)
 - Open WebUI integration testing
@@ -1028,7 +1001,7 @@ Mile  REQ            DES      TEST  FINAL
 - Negotiate higher rate limits with API providers
 - Compress similar chunks to reduce embedding calls
 
-**Owner:** Team Member A  
+**Owner:** Jaskirat Gill  
 **Status:** Active Monitoring
 
 ---
@@ -1052,7 +1025,7 @@ Mile  REQ            DES      TEST  FINAL
 - Consider hybrid search (vector + keyword) for complex queries
 - Reduce chunk overlap percentage to decrease total chunk count
 
-**Owner:** Team Member C  
+**Owner:** Rui Xia (Sherry)  
 **Status:** Monitoring
 
 ---
@@ -1076,7 +1049,7 @@ Mile  REQ            DES      TEST  FINAL
 - Document preprocessing guidelines for users
 - Log parsing failures for continuous improvement
 
-**Owner:** Team Member B  
+**Owner:** Shibo Ai  
 **Status:** Monitoring
 
 ---
@@ -1100,7 +1073,7 @@ Mile  REQ            DES      TEST  FINAL
 - Notify users of degraded service with estimated resolution time
 - Maintain 7-day embedding cache to serve recent queries during outages
 
-**Owner:** Team Member D  
+**Owner:** Crystal Zhao  
 **Status:** Active Monitoring
 
 ---
@@ -1124,7 +1097,7 @@ Mile  REQ            DES      TEST  FINAL
 - Compress embeddings if storage critical
 - Scale storage capacity proactively based on growth trends
 
-**Owner:** Team Member E  
+**Owner:** Ella McReynolds  
 **Status:** Monitoring
 
 ---
@@ -1148,7 +1121,7 @@ Mile  REQ            DES      TEST  FINAL
 - Allow users to disable contradiction detection for specific document pairs
 - Manual review queue for borderline cases
 
-**Owner:** Team Member C  
+**Owner:** Rui Xia (Sherry)  
 **Status:** Active Management
 
 ---
@@ -1172,7 +1145,7 @@ Mile  REQ            DES      TEST  FINAL
 - Provide incentives for feedback (recognition, early feature access)
 - Focus learning on high-confidence signals when feedback sparse
 
-**Owner:** Team Member B  
+**Owner:** Shibo Ai  
 **Status:** Monitoring
 
 ---
@@ -1196,7 +1169,7 @@ Mile  REQ            DES      TEST  FINAL
 - Implement few-shot learning techniques to reduce data requirements
 - Set realistic performance improvement timelines based on data volume
 
-**Owner:** Team Member A  
+**Owner:** Jaskirat Gill  
 **Status:** Requires Monitoring
 
 ---
@@ -1220,7 +1193,7 @@ Mile  REQ            DES      TEST  FINAL
 - Contribute to Open WebUI community to influence stable API design
 - Consider standalone mode if integration becomes unmaintainable
 
-**Owner:** Team Member D  
+**Owner:** Crystal Zhao  
 **Status:** Active Monitoring
 
 ---
@@ -1244,7 +1217,7 @@ Mile  REQ            DES      TEST  FINAL
 - Collect more diverse training examples
 - Consider ensemble approach combining multiple learning methods
 
-**Owner:** Team Member A  
+**Owner:** Jaskirat Gill  
 **Status:** Low Priority Monitoring
 
 ---
@@ -1329,7 +1302,7 @@ Mile  REQ            DES      TEST  FINAL
 - User authentication and basic role-based access (Admin, Editor, Viewer)
 - Configuration management for thresholds and preferences
 - Basic audit logging
-- Performance monitoring dashboard
+
 
 ---
 
@@ -1349,6 +1322,7 @@ Mile  REQ            DES      TEST  FINAL
 - Coverage gap analysis with suggested topics
 
 #### Learning & Optimization
+- Performance monitoring dashboard
 - Strategy performance tracking over time
 - Basic learning from manual overrides
 - Strategy selection improvement based on retrieval success rates
