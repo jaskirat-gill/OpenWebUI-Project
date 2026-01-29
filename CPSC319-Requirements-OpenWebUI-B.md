@@ -734,7 +734,8 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ### Level 1: Project Phases
 | Phase | Phase Name                      | Total Hours | Duration  | Team Members | Dependencies                             |
 | ----- | ------------------------------- | ----------- | --------- | ------------ | ---------------------------------------- |
-| 1     | Project Planning & Architecture | 30          | Week 1    | All          | None                                     |
+| 0     | Project Planning & Architecture | 30          | Week 1    | All          | None                                     |
+| 1     | Bootstrap & Codebase Onboarding | 13          | Week 1    | All          | Phase 0 complete                         |
 | 2     | Document Analysis Engine        | 80          | Weeks 2–3 | All          | Phase 1 complete                         |
 | 3     | Adaptive Processing Pipeline    | 70          | Weeks 3–4 | All          | Phase 2 complete                         |
 | 4     | Knowledge Base Health System    | 60          | Weeks 4–5 | All          | Phase 2 complete (parallel with Phase 3) |
@@ -745,21 +746,36 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### Level 2: Phase Breakdown
 
-#### Phase 1: Project Planning & Architecture (30 hours)
+#### Phase 0: Project Planning & Architecture (30 hours)
 
-**1.1 Requirements Finalization (8 hours)**
-- 1.1.1 Requirements document review and refinement (4 hours) - [Team Member A]
-- 1.1.2 Open WebUI community research and validation (4 hours) - [Team Member B]
+**0.1 Requirements Finalization (8 hours)**
+- 0.1.1 Requirements document review and refinement (4 hours) - [Team Member A]
+- 0.1.2 Open WebUI community research and validation (4 hours) - [Team Member B]
 
-**1.2 System Architecture Design (14 hours)**
-- 1.2.1 High-level architecture diagram and component design (5 hours) - [Team Member A] - Depends on 1.1
-- 1.2.2 Database schema design for document metadata, analytics, and health metrics (5 hours) - [Team Member C] - Depends on 1.1
-- 1.2.3 API design specification and integration points (4 hours) - [Team Member D] - Depends on 1.2.1
+**0.2 System Architecture Design (14 hours)**
+- 0.2.1 High-level architecture diagram and component design (5 hours) - [Team Member A] - Depends on 0.1
+- 0.2.2 Database schema design for document metadata, analytics, and health metrics (5 hours) - [Team Member C] - Depends on 0.1
+- 0.2.3 API design specification and integration points (4 hours) - [Team Member D] - Depends on 0.2.1
 
-**1.3 Development Environment Setup (8 hours)**
-- 1.3.1 Repository initialization, CI/CD pipeline, and code standards (3 hours) - [Team Member A]
-- 1.3.2 Development environment configuration and dependency setup (3 hours) - [Team Member E]
-- 1.3.3 Testing framework setup (pytest, integration test structure) (2 hours) - [Team Member B]
+**0.3 Development Environment Setup (8 hours)**
+- 0.3.1 Repository initialization, CI/CD pipeline, and code standards (3 hours) - [Team Member A]
+- 0.3.2 Development environment configuration and dependency setup (3 hours) - [Team Member E]
+- 0.3.3 Testing framework setup (pytest, integration test structure) (2 hours) - [Team Member B]
+
+---
+
+#### Phase 1: Bootstrap & Codebase/LLM Onboarding (13 hours)
+
+**1.1 Open WebUI Codebase Familiarization (8 hours)**
+- 1.1.1 Local run + verify core flows (2 hours) - All
+- 1.1.2 Architecture walkthrough: where RAG/KB ingestion happens (2 hours) - All
+- 1.1.3 Identify extension points for our features (2 hours) - All
+- 1.1.4 Verify existing Dockerfile build/run workflow (2 hours) - All
+
+**1.2 External Embedding Provider API Setup & Validation (5 hours)**
+- 1.2.1 Select target external embedding provider(s) (2 hours) - [Team Member D]
+- 1.2.2 Experimental unit test: validate embedding API connectivity (2 hours) - [Team Member E] - Depends on 1.2.1
+- 1.2.3 Rate limit validation: confirm provider meets minimum throughput requirement (1 hour) - [Team Member E] - Depends on 1.2.2
 
 ---
 
@@ -871,13 +887,14 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ---
 
 ### Level 3: Total Hour Breakdown by Phase
-- **Phase 1:** 30 hours
+- **Phase 0:** 30 hours
+- **Phase 1:** 13 hours
 - **Phase 2:** 80 hours
 - **Phase 3:** 70 hours
 - **Phase 4:** 60 hours
 - **Phase 5:** 40 hours
 - **Phase 6:** 45 hours
-- **Total Project Hours:** 325 hours (65 hours per team member for 5-person team)
+- **Total Project Hours:** 338 hours (67.6 hours per team member for 5-person team)
 
 ---
 
@@ -886,7 +903,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ### Timeline Overview
 **Project Duration:** 6 weeks  
 **Team Size:** 5 members  
-**Weekly Commitment:** ~11 hours per person (325 total hours / 5 people / 6 weeks)
+**Weekly Commitment:** ~11 hours per person (338 total hours / 5 people / 6 weeks)
 
 
 ---
@@ -894,10 +911,20 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ### Detailed Schedule
 
 #### Project Planning & Architecture ()
-**Phase 1 Tasks:**
+**Phase 0 Tasks:**
 - Requirements finalization and Open WebUI community research
 - System architecture design and database schema
 - Development environment setup
+- **Team Availability:** Full team available
+- **Buffer:** Built into Phase 0 duration
+
+---
+
+#### Bootstrap & Codebase/Embedding Provider Onboarding ()
+**Phase 1 Tasks:**
+- Open WebUI codebase familiarization and extension-point mapping
+- Verify existing Dockerfile build/run workflow
+- External embedding provider selection, experimental unit test, and rate-limit validation
 - **Team Availability:** Full team available
 - **Buffer:** Built into Phase 1 duration
 
@@ -953,7 +980,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ---
 
 ### Dependencies & Critical Path
-**Critical Path:** Phase 1 → Phase 2 → Phase 3 → Phase 5 → Phase 6
+**Critical Path:** Phase 0 → Phase 1 → Phase 2 → Phase 3 → Phase 5 → Phase 6
 - Phase 4 can run in parallel with Phase 3 after Phase 2 completes
 - Learning features (Phase 5) depend on both processing (Phase 3) and health metrics (Phase 4)
 - Testing (Phase 6) requires all core features complete
@@ -968,13 +995,14 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ### Gantt Chart Summary
 ```
 Week   1    2    3    4    5    6
-P1   [===]
-P2        [========]
-P3             [=========]
-P4             [======]
-P5                    [====]
-P6                       [=====]
-Mile  REQ       DES       TEST  FINAL
+P0   [===]
+P1        [===]
+P2             [========]
+P3                  [=========]
+P4                  [======]
+P5                       [======]
+P6                            [====]
+Mile  REQ            DES      TEST  FINAL
 ```
 
 ---
