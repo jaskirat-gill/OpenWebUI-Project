@@ -948,7 +948,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 ### Team Availability Considerations
 - **Midterms** Reduce non-critical tasks, focus on Phase 3/4 core features
 - **Finals :** Minimize new development, focus on testing and presentation
-- **Weekly Time Distribution:** ~11 hours/person/week average, with flexibility for high-intensity weeks
+- **Weekly Time Distribution:** ~14 hours/person/week average, with flexibility for high-intensity weeks
 
 ---
 
@@ -1425,7 +1425,7 @@ Mile  REQ            DES      TEST  FINAL
 - Open WebUI integration points are accessible
 
 #### Resource Feasibility: **Medium-High**
-- 325 total hours distributed across 6 weeks = ~11 hours/week per person (realistic for course project)
+- 325 total hours distributed across 6 weeks = ~14 hours/week per person (realistic for course project)
 - External dependencies (embedding APIs, parsing libraries) are accessible
 - Buffer time built into schedule for unexpected challenges
 - Team has diverse skill sets covering full stack development
