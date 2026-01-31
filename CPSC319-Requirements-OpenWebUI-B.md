@@ -741,7 +741,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 **0.3 Development Environment Setup (8 hours)**
 - 0.3.1 Repository initialization, CI/CD pipeline, and code standards (3 hours) - [Jaskirat Gill]
-- 0.3.2 Development environment configuration and dependency setup (3 hours) - [Ella McReynolds]
+- 0.3.2 Development environment configuration and dependency setup (3 hours) - [Rui Xia (Sherry)]
 - 0.3.3 Testing framework setup (pytest, integration test structure) (2 hours) - [Shibo Ai]
 
 ---
@@ -756,8 +756,8 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 **1.2 External Embedding Provider API Setup & Validation (5 hours)**
 - 1.2.1 Select target external embedding provider(s) (2 hours) - [Crystal Zhao]
-- 1.2.2 Experimental unit test: validate embedding API connectivity (2 hours) - [Ella McReynolds] - Depends on 1.2.1
-- 1.2.3 Rate limit validation: confirm provider meets minimum throughput requirement (1 hour) - [Ella McReynolds] - Depends on 1.2.2
+- 1.2.2 Experimental unit test: validate embedding API connectivity (2 hours) - [Crystal Zhao] - Depends on 1.2.1
+- 1.2.3 Rate limit validation: confirm provider meets minimum throughput requirement (1 hour) - [Shibo Ai] - Depends on 1.2.2
 
 ---
 
@@ -770,7 +770,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 **2.2 Content Characteristic Analysis (20 hours)**
 - 2.2.1 Content density and style analysis implementation (8 hours) - [Crystal Zhao]
-- 2.2.2 Domain terminology detection (technical, legal, financial) (7 hours) - [Ella McReynolds] - Depends on 2.2.1
+- 2.2.2 Domain terminology detection (technical, legal, financial) (7 hours) - [Jaskirat Gill] - Depends on 2.2.1
 - 2.2.3 Temporal and entity concentration analysis (5 hours) - [Jaskirat Gill] - Depends on 2.2.1
 
 **2.3 Document Classification System (20 hours)**
@@ -779,7 +779,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 - 2.3.3 Classification result storage and retrieval (5 hours) - [Crystal Zhao] - Depends on 2.3.1
 
 **2.4 Analysis API and Integration (16 hours)**
-- 2.4.1 Document analysis REST API endpoints (6 hours) - [Ella McReynolds] - Depends on 2.1, 2.2, 2.3
+- 2.4.1 Document analysis REST API endpoints (6 hours) - [Rui Xia (Sherry)] - Depends on 2.1, 2.2, 2.3
 - 2.4.2 Async processing queue for large documents (6 hours) - [Jaskirat Gill] - Depends on 2.4.1
 - 2.4.3 Error handling and validation (4 hours) - [Shibo Ai] - Depends on 2.4.1
 
@@ -794,7 +794,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 **3.2 Dynamic Strategy Selection (20 hours)**
 - 3.2.1 Strategy selection logic based on document features (10 hours) - [Crystal Zhao] - Depends on 3.1, Phase 2
-- 3.2.2 Confidence scoring for strategy decisions (6 hours) - [Ella McReynolds] - Depends on 3.2.1
+- 3.2.2 Confidence scoring for strategy decisions (6 hours) - [Shibo Ai] - Depends on 3.2.1
 - 3.2.3 Rationale generation and logging (4 hours) - [Jaskirat Gill] - Depends on 3.2.1
 
 **3.3 Manual Override System (12 hours)**
@@ -803,7 +803,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 - 3.3.3 Reversion to automatic mode (2 hours) - [Crystal Zhao] - Depends on 3.3.1
 
 **3.4 Embedding and Indexing Pipeline (14 hours)**
-- 3.4.1 Adaptive chunk embedding with metadata attachment (6 hours) - [Ella McReynolds] - Depends on 3.1, 3.2
+- 3.4.1 Adaptive chunk embedding with metadata attachment (6 hours) - [Rui Xia (Sherry)] - Depends on 3.1, 3.2
 - 3.4.2 Vector database integration and storage (5 hours) - [Jaskirat Gill] - Depends on 3.4.1
 - 3.4.3 Incremental indexing for document updates (3 hours) - [Shibo Ai] - Depends on 3.4.2
 
@@ -814,7 +814,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 **4.1 Retrieval Analytics (18 hours)**
 - 4.1.1 Retrieval event logging and storage (6 hours) - [Rui Xia (Sherry)]
 - 4.1.2 Document frequency aggregation and metrics (7 hours) - [Crystal Zhao] - Depends on 4.1.1
-- 4.1.3 Heatmap visualization API (5 hours) - [Ella McReynolds] - Depends on 4.1.2
+- 4.1.3 Heatmap visualization API (5 hours) - [Jaskirat Gill] - Depends on 4.1.2
 
 **4.2 Staleness Detection (16 hours)**
 - 4.2.1 Staleness scoring algorithm (6 hours) - [Jaskirat Gill]
@@ -823,7 +823,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 **4.3 Contradiction Detection (18 hours)**
 - 4.3.1 Semantic similarity analysis for contradiction detection (8 hours) - [Crystal Zhao]
-- 4.3.2 Severity scoring and temporal analysis (6 hours) - [Ella McReynolds] - Depends on 4.3.1
+- 4.3.2 Severity scoring and temporal analysis (6 hours) - [Shibo Ai] - Depends on 4.3.1
 - 4.3.3 Contradiction review workflow and assignment (4 hours) - [Jaskirat Gill] - Depends on 4.3.2
 
 **4.4 Health Dashboard UI (8 hours)**
@@ -836,7 +836,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 **5.1 Performance Tracking (12 hours)**
 - 5.1.1 Strategy performance metrics collection (6 hours) - [Crystal Zhao]
-- 5.1.2 Retrieval success/failure tracking per strategy (6 hours) - [Ella McReynolds] - Depends on 5.1.1
+- 5.1.2 Retrieval success/failure tracking per strategy (6 hours) - [Crystal Zhao] - Depends on 5.1.1
 
 **5.2 Learning Algorithm Implementation (16 hours)**
 - 5.2.1 Strategy selection improvement based on performance (10 hours) - [Jaskirat Gill] - Depends on 5.1
@@ -859,7 +859,7 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 - 6.2.2 Open WebUI integration testing (7 hours) - [Crystal Zhao] - Depends on 6.1
 
 **6.3 Performance Testing (10 hours)**
-- 6.3.1 Load testing with large document sets (5 hours) - [Ella McReynolds] - Depends on 6.2
+- 6.3.1 Load testing with large document sets (5 hours) - [Crystal Zhao] - Depends on 6.2
 - 6.3.2 Strategy selection and retrieval performance benchmarking (5 hours) - [Jaskirat Gill] - Depends on 6.3.1
 
 **6.4 User Acceptance Testing (8 hours)**
@@ -875,8 +875,8 @@ As a **knowledge manager**, I want to **A/B test different processing strategies
 
 ### Timeline Overview
 **Project Duration:** 6 weeks  
-**Team Size:** 5 members  
-**Weekly Commitment:** ~11 hours per person (338 total hours / 5 people / 6 weeks)
+**Team Size:** 4 members  
+**Weekly Commitment:** ~14 hours per person (338 total hours / 4 people / 6 weeks)
 
 
 ---
@@ -1097,7 +1097,7 @@ Mile  REQ            DES      TEST  FINAL
 - Compress embeddings if storage critical
 - Scale storage capacity proactively based on growth trends
 
-**Owner:** Ella McReynolds  
+**Owner:** Shibo Ai
 **Status:** Monitoring
 
 ---
